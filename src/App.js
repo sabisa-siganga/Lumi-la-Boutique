@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/header/header";
+import Home from "./components/home/home";
+import UserProfile from "./components/userProfile/userProfile";
+import Shopping from "./components/shopping/shopping";
+import Legal from "./components/legal/legal";
+import InterestCalculator from "./components/interestCalculator/interestCalculator";
+
+// Creating a website for fictitious clothing brand
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Displaying the header on every page of the website */}
+      <Header />
+      {/* Creating routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/UserProfile" element={<UserProfile />} />
+        <Route path="/Shopping" element={<Shopping />} />
+        <Route path="/Legal" element={<Legal />} />
+        <Route path="/InterestCalculator" element={<InterestCalculator />} />
+      </Routes>
+    </>
   );
 }
 
